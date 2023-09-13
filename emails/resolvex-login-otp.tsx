@@ -62,7 +62,7 @@ export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; ho
                         </defs>
                     </svg>
                     <Text>
-                        <Link href={homeUrl} target="_blank">
+                        <Link href="https://resolvex.ai" target="_blank">
                             ResolveX.ai
                         </Link>
                         , forge vital customer connections
