@@ -7,7 +7,7 @@ export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; ho
         <Preview>The OTP provided for your login request</Preview>
         <Tailwind>
             <Body
-                className="bg-white text-gray-900"
+                className="bg-white"
                 style={{
                     fontFamily:
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
@@ -19,13 +19,13 @@ export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; ho
                     <code className="block rounded-md tracking-widest w-11/12 text-center font-mono text-lg py-4 bg-gray-100 text-gray-900">
                         {otp}
                     </code>
-                    <Text>Safely ignore this email if you did not request a login.</Text>
+                    <Text className="text-gray-900">Safely ignore this email if you did not request a login.</Text>
                 </Container>
 
                 <Container className="mt-12">
                     <Img src="https://resolvex.ai/logo.png" height={32} alt="logo" />
-                    <Text>
-                        <Link href="https://resolvex.ai" target="_blank">
+                    <Text className="text-gray-900">
+                        <Link href="https://resolvex.ai" target="_blank" className="text-blue-700">
                             ResolveX.ai
                         </Link>
                         , forge vital customer connections
