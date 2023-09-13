@@ -7,7 +7,7 @@ export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; ho
         <Preview>The OTP provided for your login request</Preview>
         <Tailwind>
             <Body
-                className="bg-white"
+                className="bg-white text-gray-900"
                 style={{
                     fontFamily:
                         "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
