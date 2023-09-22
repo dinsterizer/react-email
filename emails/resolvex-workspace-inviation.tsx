@@ -1,10 +1,28 @@
-import { Body, Container, Head, Heading, Html, Img, Link, Preview, Text, Tailwind } from '@react-email/components';
+import {
+    Body,
+    Container,
+    Head,
+    Heading,
+    Html,
+    Img,
+    Link,
+    Preview,
+    Text,
+    Tailwind,
+    Button,
+} from '@react-email/components';
 import * as React from 'react';
 
-export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; homeUrl: string }) => (
+export default ({
+    workspaceName = '{{WORKSPACE_NAME}}',
+    inviter = '{{INVITER}}',
+}: {
+    workspaceName: string;
+    inviter: string;
+}) => (
     <Html>
         <Head />
-        <Preview>The OTP provided for your login request</Preview>
+        <Preview>Invitation to join "{workspaceName}" on ResolveX.ai</Preview>
         <Tailwind>
             <Body
                 className="bg-white"
@@ -14,12 +32,16 @@ export default ({ otp = '{{OTP}}', homeUrl = '{{HOME_URL}}' }: { otp: string; ho
                 }}
             >
                 <Container>
-                    <Heading className="text-2xl text-gray-700">Login</Heading>
-                    <Text className="text-gray-700">Please copy and paste this OTP to login.</Text>
-                    <code className="block rounded-md tracking-widest w-11/12 text-center font-mono text-lg py-4 bg-gray-100 text-gray-900">
-                        {otp}
-                    </code>
-                    <Text className="text-gray-900">Safely ignore this email if you did not request a login.</Text>
+                    <Heading className="text-2xl text-gray-700">
+                        <span className="font-bold">{inviter}</span> invited you to join{' '}
+                        <span className="inline-block min-w-max font-bold">"{workspaceName}"</span> on ResolveX.ai
+                    </Heading>
+
+                    <div className="flex justify-center py-8">
+                        <Link href="https://app.resolvex.ai" className="rounded-md bg-gray-900 text-white py-4 px-8">
+                            Accept invite
+                        </Link>
+                    </div>
                 </Container>
 
                 <Container className="mt-12">
