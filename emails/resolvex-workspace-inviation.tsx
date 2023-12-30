@@ -14,11 +14,13 @@ import {
 import * as React from 'react';
 
 export default ({
-    workspaceName = '{{WORKSPACE_NAME}}',
-    inviter = '{{INVITER}}',
+    workspaceName = '{{ORGANIZATION_NAME}}',
+    inviter = '{{INVITER_NAME}}',
+    invitationAcceptUrl = '{{INVITATION_ACCEPT_URL}}',
 }: {
     workspaceName: string;
     inviter: string;
+    invitationAcceptUrl: string;
 }) => (
     <Html>
         <Head />
@@ -38,10 +40,17 @@ export default ({
                     </Heading>
 
                     <div className="flex justify-center py-8">
-                        <Link href="https://app.resolvex.ai" className="rounded-md bg-gray-900 text-white py-4 px-8">
-                            Accept invite
+                        <Link href={invitationAcceptUrl} className="rounded-md bg-gray-900 text-white py-4 px-8">
+                            Join now
                         </Link>
                     </div>
+
+                    <Text className="text-gray-700">
+                        Or copy and paste this link into your browser: <br />
+                        <Link href={invitationAcceptUrl} className="text-blue-700">
+                            {invitationAcceptUrl}
+                        </Link>
+                    </Text>
                 </Container>
 
                 <Container className="mt-12">
